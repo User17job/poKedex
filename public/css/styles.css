@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bungee+Spice&family=Caveat:wght@400..700&family=Irish+Grover&family=Madimi+One&family=Oswald:wght@200..700&family=Peralta&family=Permanent+Marker&family=Pixelify+Sans:wght@400..700&family=Rubik+Scribble&family=Tac+One&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  background-color: white;
+  font-family: "Madimi One", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+#nabvar {
+  width: 100%;
+  height: 45px;
+  background-image: linear-gradient(to bottom, rgb(28, 28, 28) 0%, #eae9e9 100%);
+  position: relative;
+  padding-top: 35px;
+  text-align: end;
+  color: white;
+}
+
+.navbar__item > a {
+  font-weight: 600;
+  padding: 15px;
+  text-align: start;
+  position: relative;
+  color: white;
+}
+
+.navbar__item > a:hover {
+  text-decoration: none;
+  color: rgb(180, 180, 180);
+}
+
+.title, .title > a {
+  text-decoration: none;
+  position: absolute;
+  left: 1%;
+  top: 25%;
+  font-family: "Peralta", serif;
+}
+
+.figure {
+  width: 504px;
+  max-width: 95%;
+  margin: auto;
+  position: relative;
+  top: 50px;
+  z-index: -5;
+}
+
+.figure > div {
+  font-family: "Peralta", serif;
+  border: solid rgba(249, 0, 0, 0.63);
+  color: #ffffff;
+  background-color: #EB1C1C;
+  font-size: 60px;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  height: 156px;
+}
+
+.form {
+  position: relative;
+  width: 75%;
+  max-width: 100%;
+  height: auto;
+  top: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.form > .div {
+  position: relative;
+  width: 350px;
+  display: flex;
+}
+
+.form > .div > input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  font-family: "Madimi One", sans-serif;
+  border: #5c5c5c solid 1px;
+}
+
+.ddd {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 75px;
+  height: 40px;
+  margin: auto;
+  border-radius: 6px;
+}
+
+.form > div > .ddd > .form__btn {
+  width: 75px;
+  height: 40.5px;
+  border-radius: 5px;
+  position: absolute;
+  font-family: "Madimi One", sans-serif;
+  border: #5c5c5c solid 1px;
+  background-color: rgb(135, 135, 135);
+  color: #ffffff;
+}
+
+.form > div > .ddd > .form__btn:hover {
+  background-color: #5c5c5c;
+}
+
+.uno {
+  z-index: 1;
+}
+
+.dos {
+  z-index: -1;
+}
+
+.uno:active ~ .dos {
+  transform: scale(1.1);
+}
+
+.select > select {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  font-family: "Madimi One", sans-serif;
+  border: #5c5c5c solid 1px;
+}
+
+.filter-pokemon {
+  font-family: "Madimi One", sans-serif;
+}
+
+.filter-pokemon:hover {
+  color: rgb(185, 0, 0);
+}
+
+.cardContainer {
+  width: 1100px;
+  max-width: 98%;
+  height: auto;
+  border: #5c5c5c solid;
+  position: relative;
+  top: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.foot {
+  width: 100%;
+  height: 450px;
+  background-color: #b4b4b4;
+  position: relative;
+  top: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .figure {
+    width: 504px;
+    max-width: 95%;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    z-index: -5;
+  }
+  .figure > div {
+    transform: scale(0.9);
+    font-size: 50px;
+  }
+  .form {
+    display: block;
+  }
+  .select > select {
+    left: 0px;
+    width: 250px;
+    position: relative;
+    margin: auto;
+  }
+  .cardContainer {
+    grid-template-columns: auto auto;
+  }
+}/*# sourceMappingURL=styles.css.map */

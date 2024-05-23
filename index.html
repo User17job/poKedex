@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POkDex</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <main>
+        <nav id="nabvar">
+            <div class="navbar__item title"><a  href="http://127.0.0.1:5500/index.html" ><h2>POkDex</h2></a></div>
+            <div class="navbar__item"><a href="https://github.com/User17job/User17job" target="_blank">MAS🌟</a></div>
+        </nav>
+        <figure class="figure">
+            <!-- <img class="figure__img" src="./public/img/PokDex.png" alt="Logo"> -->
+            <div><h1>PokDex</h1></div>
+        </figure>
+
+
+        <form class="form">
+            <div class="div">
+                <input class="form__input" type="text" placeholder="Search a Pokemon">
+                <div class="ddd">
+                    <button class="form__btn uno" type="button">Search</button>
+                    <button class="form__btn dos" type="button"></button>
+                </div>
+            </div>
+
+            <div class="select">
+                <select name="type-pokemon" id="type-pokemon" class="form-select">
+                    <option value="" class="filter-pokemon">Type Pokemon</option>
+                    <option value="https://pokeapi.co/api/v2/type/1/" class="filter-pokemon">Normal</option>
+                    <option value="https://pokeapi.co/api/v2/type/2/" class="filter-pokemon">Fighting</option>
+                    <option value="https://pokeapi.co/api/v2/type/3/" class="filter-pokemon">Flying</option>
+                    <option value="https://pokeapi.co/api/v2/type/4/" class="filter-pokemon">Poison</option>
+                    <option value="https://pokeapi.co/api/v2/type/5/" class="filter-pokemon">Ground</option>
+                    <option value="https://pokeapi.co/api/v2/type/6/" class="filter-pokemon">Rock</option>
+                    <option value="https://pokeapi.co/api/v2/type/7/" class="filter-pokemon">Bug</option>
+                    <option value="https://pokeapi.co/api/v2/type/8/" class="filter-pokemon">Ghost</option>
+                    <option value="https://pokeapi.co/api/v2/type/9/" class="filter-pokemon">Steel</option>
+                    <option value="https://pokeapi.co/api/v2/type/10/" class="filter-pokemon">Fire</option>
+                    <option value="https://pokeapi.co/api/v2/type/11/" class="filter-pokemon">Water</option>
+                    <option value="https://pokeapi.co/api/v2/type/12/" class="filter-pokemon">Grass</option>
+                    <option value="https://pokeapi.co/api/v2/type/13/" class="filter-pokemon">Electric</option>
+                    <option value="https://pokeapi.co/api/v2/type/14/" class="filter-pokemon">psychic</option>
+                    <option value="https://pokeapi.co/api/v2/type/15/" class="filter-pokemon">Ice</option>
+                    <option value="https://pokeapi.co/api/v2/type/16/" class="filter-pokemon">Dragon</option>
+                    <option value="https://pokeapi.co/api/v2/type/17/" class="filter-pokemon">Dark</option>
+                    <option value="https://pokeapi.co/api/v2/type/18/" class="filter-pokemon">Fairy</option>
+                  </select>
+            </div>
+        </form>
+
+        <!-- contenedor de las imagenes -->
+        <div id="POkeBox" class="cardContainer"></div>
+
+        
+        <footer class="foot">
+            <div class="cambio">
+                <button id="cambio__btnBack">Back</button>
+                <button id="cambio__btnFront">Front</button>
+            </div>
+            <div class="foot__info">
+                <figure>
+                    <img src="https://th.bing.com/th/id/OIP.Pg9WcjJ7mdovBiVN1wLoSQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="github" class="foot__info--img">
+                    <p>give me a star</p>
+                </figure>
+                <button>Go!</button>
+
+            </div>
+        </footer>
+   </main>
+
+    <script src="./public/js/script.js" type="module"></script>
+</body>
+</html>
