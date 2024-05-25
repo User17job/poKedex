@@ -15,6 +15,7 @@ function checkType() {
     url = option;
     fetchPokeTypes();
 }
+;
 function fetchPokeTypes() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log(url);
@@ -58,9 +59,9 @@ function fetchPokeTypes() {
         }
     });
 }
+;
 function check(event) {
     return __awaiter(this, void 0, void 0, function* () {
-        // alert("hia")event.target as HTMLElement
         const elementoClicado = event.target;
         const textoElemento = elementoClicado.textContent;
         console.log('Texto del elemento clicado:', textoElemento);
@@ -71,7 +72,6 @@ function check(event) {
                 fetch(`https://pokeapi.co/api/v2/pokemon/${textoElemento}`)
                     .then(res => res.json())
                     .then((res) => {
-                    let miPokemon = res;
                     $img.setAttribute("src", res.sprites.front_default);
                     $figCapt.classList.add("figCapPokk");
                     $figCapt.setAttribute("onclick", "check()");
@@ -80,15 +80,80 @@ function check(event) {
                     $figure.appendChild($img);
                     $figure.classList.remove("buu");
                     $figure.classList.add("figurePokk");
-                    // $figure.appendChild($figCapt)
                     fragment.appendChild($figure);
-                    let config = `
-                        <div class="DDD">
+                    console.log(res);
+                    if (res.types[1]) {
+                        if (res.abilities[1]) {
+                            Swal.fire({
+                                title: res.name,
+                                width: 600,
+                                padding: "0em",
+                                color: "#fffff",
+                                html: `
+                    <div class="DDD">
                         <figure><img src="${res.sprites.front_default}" /></figure>
                         <li>Id: ${res.id}</li>
                         <li>Name: ${res.name}</li>
                         <li>Base Experience: ${res.base_experience}</li>
+                        <li>Abilities: ${res.abilities[0].ability.name} and ${res.abilities[1].ability.name}</li>
+                        <li>Type(s): ${res.types[0].type.name}_&_${res.types[1].type.name}</li>
+                        <li>weight: ${res.weight}</li><br><br>
+                        <p class="DDDd"><b>Stats:</b><p>
+                        <ol>
+                            <li>------Hp: ${res.stats[0].base_stat}</li>
+                            <li>------Attack: ${res.stats[1].base_stat}</li>
+                            <li>------Defense: ${res.stats[2].base_stat}</li>
+                            <li>------Special-Attack: ${res.stats[3].base_stat}</li>
+                            <li>------Special-Defense: ${res.stats[4].base_stat}</li>
+                            <li>------Speed: ${res.stats[5].base_stat}</li>
+                        </ol>
+                    </div>
+                    `
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                title: res.name,
+                                width: 600,
+                                padding: "0em",
+                                color: "#fffff",
+                                html: `
+                    <div class="DDD">
+                        <figure><img src="${res.sprites.front_default}"/></figure>
+                        <li>Id: ${res.id}</li>
+                        <li>Name: ${res.name}</li>
+                        <li>Base Experience: ${res.base_experience}</li>
                         <li>Abilities: ${res.abilities[0].ability.name}</li>
+                        <li>Type(s): ${res.types[0].type.name}_&_${res.types[1].type.name}</li>
+                        <li>weight: ${res.weight}</li><br><br>
+                        <p class="DDDd"><b>Stats:</b><p>
+                        <ol>
+                            <li>------Hp: ${res.stats[0].base_stat}</li>
+                            <li>------Attack: ${res.stats[1].base_stat}</li>
+                            <li>------Defense: ${res.stats[2].base_stat}</li>
+                            <li>------Special-Attack: ${res.stats[3].base_stat}</li>
+                            <li>------Special-Defense: ${res.stats[4].base_stat}</li>
+                            <li>------Speed: ${res.stats[5].base_stat}</li>
+                        </ol>
+                    </div>
+                     `
+                            });
+                        }
+                    }
+                    if (res.types[0]) {
+                        if (res.abilities[1]) {
+                            Swal.fire({
+                                title: res.name,
+                                width: 600,
+                                padding: "0em",
+                                color: "#fffff",
+                                html: `
+                    <div class="DDD">
+                        <figure><img src="${res.sprites.front_default}" /></figure>
+                        <li>Id: ${res.id}</li>
+                        <li>Name: ${res.name}</li>
+                        <li>Base Experience: ${res.base_experience}</li>
+                        <li>Abilities: ${res.abilities[0].ability.name} and ${res.abilities[1].ability.name}</li>
                         <li>Type(s): ${res.types[0].type.name}</li>
                         <li>weight: ${res.weight}</li><br><br>
                         <p class="DDDd"><b>Stats:</b><p>
@@ -101,35 +166,7 @@ function check(event) {
                             <li>------Speed: ${res.stats[5].base_stat}</li>
                         </ol>
                     </div>
-                    `;
-                    console.log(res);
-                    if (res.types[1]) {
-                        if (res.abilities[1]) {
-                            Swal.fire({
-                                title: res.name,
-                                width: 600,
-                                padding: "0em",
-                                color: "#fffff",
-                                html: `
-                                <div class="DDD">
-                                <figure><img src="${res.sprites.front_default}" /></figure>
-                                <li>Id: ${res.id}</li>
-                                <li>Name: ${res.name}</li>
-                                <li>Base Experience: ${res.base_experience}</li>
-                                <li>Abilities: ${res.abilities[0].ability.name} and ${res.abilities[1].ability.name}</li>
-                                <li>Type(s): ${res.types[0].type.name}_&_${res.types[1].type.name}</li>
-                                <li>weight: ${res.weight}</li><br><br>
-                                <p class="DDDd"><b>Stats:</b><p>
-                                <ol>
-                                    <li>------Hp: ${res.stats[0].base_stat}</li>
-                                    <li>------Attack: ${res.stats[1].base_stat}</li>
-                                    <li>------Defense: ${res.stats[2].base_stat}</li>
-                                    <li>------Special-Attack: ${res.stats[3].base_stat}</li>
-                                    <li>------Special-Defense: ${res.stats[4].base_stat}</li>
-                                    <li>------Speed: ${res.stats[5].base_stat}</li>
-                                </ol>
-                            </div>
-                            `
+                    `
                             });
                         }
                         else {
@@ -139,83 +176,25 @@ function check(event) {
                                 padding: "0em",
                                 color: "#fffff",
                                 html: `
-                                <div class="DDD">
-                                <figure><img src="${res.sprites.front_default}"/></figure>
-                                <li>Id: ${res.id}</li>
-                                <li>Name: ${res.name}</li>
-                                <li>Base Experience: ${res.base_experience}</li>
-                                <li>Abilities: ${res.abilities[0].ability.name}</li>
-                                <li>Type(s): ${res.types[0].type.name}_&_${res.types[1].type.name}</li>
-                                <li>weight: ${res.weight}</li><br><br>
-                                <p class="DDDd"><b>Stats:</b><p>
-                                <ol>
-                                    <li>------Hp: ${res.stats[0].base_stat}</li>
-                                    <li>------Attack: ${res.stats[1].base_stat}</li>
-                                    <li>------Defense: ${res.stats[2].base_stat}</li>
-                                    <li>------Special-Attack: ${res.stats[3].base_stat}</li>
-                                    <li>------Special-Defense: ${res.stats[4].base_stat}</li>
-                                    <li>------Speed: ${res.stats[5].base_stat}</li>
-                                </ol>
-                            </div>
-                            `
-                            });
-                        }
-                    }
-                    if (res.types[0]) {
-                        if (res.abilities[1]) {
-                            Swal.fire({
-                                title: res.name,
-                                width: 600,
-                                padding: "0em",
-                                color: "#fffff",
-                                html: `
-                                <div class="DDD">
-                                <figure><img src="${res.sprites.front_default}" /></figure>
-                                <li>Id: ${res.id}</li>
-                                <li>Name: ${res.name}</li>
-                                <li>Base Experience: ${res.base_experience}</li>
-                                <li>Abilities: ${res.abilities[0].ability.name} and ${res.abilities[1].ability.name}</li>
-                                <li>Type(s): ${res.types[0].type.name}</li>
-                                <li>weight: ${res.weight}</li><br><br>
-                                <p class="DDDd"><b>Stats:</b><p>
-                                <ol>
-                                    <li>------Hp: ${res.stats[0].base_stat}</li>
-                                    <li>------Attack: ${res.stats[1].base_stat}</li>
-                                    <li>------Defense: ${res.stats[2].base_stat}</li>
-                                    <li>------Special-Attack: ${res.stats[3].base_stat}</li>
-                                    <li>------Special-Defense: ${res.stats[4].base_stat}</li>
-                                    <li>------Speed: ${res.stats[5].base_stat}</li>
-                                </ol>
-                            </div>
-                            `
-                            });
-                        }
-                        else {
-                            Swal.fire({
-                                title: res.name,
-                                width: 600,
-                                padding: "0em",
-                                color: "#fffff",
-                                html: `
-                                <div class="DDD">
-                                <figure><img src="${res.sprites.front_default}" /></figure>
-                                <li>Id: ${res.id}</li>
-                                <li>Name: ${res.name}</li>
-                                <li>Base Experience: ${res.base_experience}</li>
-                                <li>Abilities: ${res.abilities[0].ability.name} </li>
-                                <li>Type(s): ${res.types[0].type.name}</li>
-                                <li>weight: ${res.weight}</li><br><br>
-                                <p class="DDDd"><b>Stats:</b><p>
-                                <ol>
-                                    <li>------Hp: ${res.stats[0].base_stat}</li>
-                                    <li>------Attack: ${res.stats[1].base_stat}</li>
-                                    <li>------Defense: ${res.stats[2].base_stat}</li>
-                                    <li>------Special-Attack: ${res.stats[3].base_stat}</li>
-                                    <li>------Special-Defense: ${res.stats[4].base_stat}</li>
-                                    <li>------Speed: ${res.stats[5].base_stat}</li>
-                                </ol>
-                            </div>
-                            `
+                     <figure><img src="${res.sprites.front_default}" /></figure>
+                     <div class="DDD">
+                        <li>Id: ${res.id}</li>
+                        <li>Name: ${res.name}</li>
+                        <li>Base Experience: ${res.base_experience}</li>
+                        <li>Abilities: ${res.abilities[0].ability.name} </li>
+                        <li>Type(s): ${res.types[0].type.name}</li>
+                        <li>weight: ${res.weight}</li><br><br>
+                        <p class="DDDd"><b>Stats:</b><p>
+                        <ol>
+                            <li>------Hp: ${res.stats[0].base_stat}</li>
+                            <li>------Attack: ${res.stats[1].base_stat}</li>
+                            <li>------Defense: ${res.stats[2].base_stat}</li>
+                            <li>------Special-Attack: ${res.stats[3].base_stat}</li>
+                            <li>------Special-Defense: ${res.stats[4].base_stat}</li>
+                            <li>------Speed: ${res.stats[5].base_stat}</li>
+                        </ol>
+                    </div>
+                    `
                             });
                         }
                     }
@@ -228,3 +207,4 @@ function check(event) {
         }
     });
 }
+;

@@ -22,5 +22,3 @@ function fetchPOkes() {
 }
 // Exporta la función por defecto
 export default fetchPOkes;
-// Llama a la función para hacer la petición
-//  export default fetchPOkes();

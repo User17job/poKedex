@@ -231,7 +231,8 @@ main {
 
 .figCapPokk {
   width: 80%;
-  height: 30px;
+  min-height: 30px;
+  height: auto;
   margin: auto;
   border: solid;
   border-radius: 5px;
@@ -240,6 +241,7 @@ main {
   color: #eae9e9;
   background-color: #EB1C1C;
   transition: 0.1s;
+  overflow: scroll;
   cursor: crosshair;
 }
 
@@ -269,7 +271,7 @@ main {
   align-items: center;
 }
 .cambio .btnBack {
-  background: #fff;
+  background: #ffffff;
   border: 2px solid #888;
   font-size: 18px;
   cursor: pointer;
@@ -388,7 +390,7 @@ main {
   }
   .figurePok {
     width: 90%;
-    height: 200px;
+    height: auto;
   }
   .foot {
     max-width: 100%;

@@ -8,11 +8,5 @@ async function fetchPOkes(): Promise<any> {
         throw error;
     }
 }
-
 // Exporta la función por defecto
 export default fetchPOkes;
-
-
-
-// Llama a la función para hacer la petición
-//  export default fetchPOkes();
