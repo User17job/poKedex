@@ -5,66 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POkDex</title>
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/188/188918.png">
 </head>
 <body>
-    <main>
-        <nav id="nabvar">
-            <div class="navbar__item title"><a  href="http://127.0.0.1:5500/index.html" ><h2>POkDex</h2></a></div>
-            <div class="navbar__item"><a href="https://github.com/User17job/User17job" target="_blank">MAS🌟</a></div>
-        </nav>
-        <figure class="figure" >
-            <!-- <img class="figure__img" src="./public/img/PokDex.png" alt="Logo"> -->
-            <div><h1>PokDex</h1></div>            
+<main>
+    <!-- El navbar -->
+    <nav id="nabvar">
+        <div class="navbar__item title"><a  href="http://127.0.0.1:5500/index.html" ><h2>POkDex</h2></a></div>
+        <div class="navbar__item"><a href="https://github.com/User17job/User17job" target="_blank">MAS🌟</a></div>
+    </nav>
+    <!-- el logo -->
+    <figure class="figure" >
+        <div><h1>PokDex</h1></div>            
+    </figure>
+    <!-- formulario de busqueda -->
+    <form class="form">
+    <div class="div">
+        <input class="form__input" id="input" type="text" placeholder="Search a Pokemon">
+        <div class="ddd">
+            <button class="form__btn uno" type="submit" id="search">Search</button>
+            <button class="form__btn dos" type="button"></button>
+        </div>
+    </div><br><br>
+    <!-- select de los tipos -->
+    <div class="select" >
+        <select name="type-pokemon" id="type-pokemon" class="form-select" onchange="checkType();">
+           <!-- waiting -->
+           <option value="firts" class="filter-pokemon">Type Pokemon</option>
+        </select>
+    </div>
+    </form>
+
+    <!-- contenedor de las cards -->
+    <div id="POkeBox" class="cardContainer"></div>
+     
+    <!-- footer donde tambien pondre los botones de avanzar y retroceder -->
+    <footer class="foot">
+    <div class="cambio">    
+        <button id="btnBack" class="btnBack">
+            <div class="content">
+                <span class="text">Back</span>
+            </div>
+        </button>
+         
+        <button id="btnFront" class="btnBack">
+            <div class="content">
+                <span class="text">Front</span>
+            </div>
+        </button>
+    </div>  
+    <!-- link a mi perfil de github   -->
+    <div class="foot__info">
+        <figure>
+            <img src="https://th.bing.com/th/id/OIP.Pg9WcjJ7mdovBiVN1wLoSQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="github" class="foot__info--img">
+            <p>give me a star⭐</p>
+            <a href="https://github.com/User17job" target="_blank">
+                <button class="button-32"><span class="text">Go</span></button>
+            </a>
         </figure>
-
-
-        <form class="form">
-            <div class="div">
-                <input class="form__input" id="input" type="text" placeholder="Search a Pokemon">
-                <div class="ddd">
-                    <button class="form__btn uno" type="submit" id="search">Search</button>
-                    <button class="form__btn dos" type="button"></button>
-                </div>
-            </div><br><br>
-
-            <div class="select" >
-                <select name="type-pokemon" id="type-pokemon" class="form-select" onchange="checkType();">
-                   <!-- waiting -->
-                   <option value="firts" class="filter-pokemon">Type Pokemon</option>
-                  </select>
-            </div>
-        </form>
-
-        <!-- contenedor de las imagenes -->
-        <div id="POkeBox" class="cardContainer"></div>
-
-        <footer class="foot">
-            <div class="cambio">    
-                <button id="btnBack" class="btnBack">
-                    <div class="content">
-                        <span class="text">Back</span>
-                    </div>
-                </button>
-
-                <button id="btnFront" class="btnBack">
-                    <div class="content">
-                        <span class="text">Front</span>
-                    </div>
-                </button>
-            </div>
-
-            <div class="foot__info">
-                <figure>
-                    <img src="https://th.bing.com/th/id/OIP.Pg9WcjJ7mdovBiVN1wLoSQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="github" class="foot__info--img">
-                    <p>give me a star⭐</p>
-                    <a href="https://github.com/User17job" target="_blank">
-                        <button class="button-32"><span class="text">Go</span></button>
-                    </a>
-                </figure>
-            </div>
-        </footer>
+    </div>
+    </footer>
 
    </main>
+   <!-- scripts -->
     <script src="./public/js/script.js" type="module"></script>
     <script src="./public/js/script2.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
