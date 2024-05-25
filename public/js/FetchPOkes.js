@@ -1,24 +1,26 @@
-export default function fetchPOkes() {
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=40&limit=20`, $pokeBox = document.getElementById("POkeBox"), fragment = document.createDocumentFragment();
-    fetch(url)
-        .then(res => res.json())
-        .then((res) => {
-        res.results.forEach((pokemon) => {
-            // res.next
-            const $figure = document.createElement("figure"), $img = document.createElement("img"), $figCapt = document.createElement("figcaption"), $pokeName = document.createTextNode(pokemon.name);
-            fetch(pokemon.url)
-                .then(res => res.json())
-                .then((res) => {
-                $img.setAttribute("src", res.sprites.front_default);
-            });
-            $img.setAttribute("alt", pokemon.name);
-            $img.setAttribute("title", pokemon.name);
-            $figCapt.appendChild($pokeName);
-            $figure.appendChild($img);
-            $figure.appendChild($figCapt);
-            fragment.appendChild($figure);
-        });
-        console.log(res);
-        $pokeBox.appendChild(fragment);
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+function fetchPOkes() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`;
+            const response = yield fetch(url);
+            return response;
+        }
+        catch (error) {
+            console.error('Error al obtener los datos:', error);
+            throw error;
+        }
     });
 }
+// Exporta la función por defecto
+export default fetchPOkes;
+// Llama a la función para hacer la petición
+//  export default fetchPOkes();
