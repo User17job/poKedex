@@ -1,4 +1,4 @@
-POKDEX
+#POKDEX
 
 Tremendo proyecto, ha sido uno de loa mas complicados en que e trabajado por ahora (24/5/24) 
 en el cual puse en practica la modularizacion de mi codigo este proyecto esta inspirado en 
@@ -8,9 +8,9 @@ que otra cosa tratare de refactorizarlo pero ya viendo como queda me puede dar p
 LinkDelProyecto_https://user17job.github.io/poKedex/.
 
 
-Diseño agradable✅
+#Diseño agradable✅
 
-Casos de Prueba:
+#Casos de Prueba:
  cuando el valor del input sea 21 el pokemon sera spearow.✅
  -
  Al seleccionar un tipo en la etiqueta select al lado del boton search. el contenido del contenedor de cartas se actualizara.✅
